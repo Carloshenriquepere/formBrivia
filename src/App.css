@@ -1,0 +1,308 @@
+body{
+    background-color: rgb(88, 190, 196);
+    height: 100%;
+    
+}
+main{
+    background-color: white;
+    max-width: 1000px;
+    margin: auto;
+}
+.link, .logo{ display: block;}
+.containner{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+.banner{ 
+    width: 100%;
+    height: 150px;
+    background-image: url('../src/img/banner_descktop.jpeg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;    
+    align-items: baseline;
+    justify-content: space-between;
+    padding-left: 420px;
+    padding-top: 50px
+}
+.link > a{
+    padding-right: 50px; 
+    text-decoration: none;
+    color: white;
+}
+#vector_descktop{
+    width: 9px;
+    height: 15px;
+    margin-left: 18px;
+}
+.logo > img{
+    width: 70%;
+}
+img#logo-mobile{display: none;}
+a.botao_{display: none;}
+#banner-mobile{display: none;}
+.chamada-01 h1{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 29px;
+    padding: 30px 20px 20px 50px;
+}
+.chamada-01 h1{
+    padding: 20px 350px 10px 150px;
+}
+.chamada-01 p{
+    padding: 28px 200px 80px 300px;
+}
+picture > img {
+    width: 100%;
+}
+.chamada-02{
+    
+    margin-top: 100px;
+    max-width: 100%px;
+   
+    height: auto;
+    background: #F8F8F8;
+}
+.chamada-02 h2{
+    font-family: 'Montserrat';
+    font-size: 18px;
+    padding-top: 80px;
+    padding-left: 250px;
+}
+.vector02{
+    margin-left: 490px;
+    width: 7%;
+    
+}
+.chamada-02 p{
+    padding-top: 0px;
+    padding-left: 250px;
+    padding-right: 300px;
+    padding-bottom: 100px;
+}
+.footer{display: none;}
+.footer-descktop{
+    background-image: url('../src/img/rodape_descktop.png');
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+.grupo-descktop{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    align-items: baseline;
+}
+.grupo-descktop > img{
+    padding-right: 30px;
+    width: 120px;
+}
+.grupo-descktop > div{
+    padding-right: 300px;
+}
+.grupo-descktop > a{
+    padding-left: 150px;
+}
+.h1{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 100px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 29px;
+}
+
+.btn_editar{
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #E6F2FC;
+    color: #004077;
+}
+.btn_editar > p , a{
+    font-size: 15px;
+    padding: 0 10px 0 10px;
+    text-decoration: none;
+    
+}
+ul{
+    list-style: none;
+    padding-left: 0;
+    padding-bottom: 10px;
+}
+li{
+    padding: 9px 0px 5px;
+    font-family: 'Baloo Paaji';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+}
+li > strong{
+    padding: 100px;
+}
+form{
+    padding-top: 30px;
+    padding-bottom: 50px;
+    max-width: 800px;
+    margin: auto;
+}
+input{
+    padding-right: 610px;
+    margin-bottom: 20px;
+    font-family: 'Noticia Text';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 24px;
+    color: #17305A
+    
+}
+.form_label{
+    font-family: 'Noticia Text';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 20px;
+    color: #909399;
+    
+}
+
+button{
+    margin-bottom: 20px;
+    color: white;
+    background-color: #17305A;;
+    margin-left: 300px;
+    width: 256px;
+    height: 44px;
+    right: 288px;
+    top: 60px;
+}
+.btn_cadastro{
+    
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    background: #F0F2F5;
+    margin-bottom: 20px;
+    font-family: 'Noticia Text';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 24px;
+    color: #090b0f;
+}.btn_cadastro > span {
+    padding: 10px;
+    color: green;
+}
+.btn_cadastro > .p_erro{
+    color: red;
+}
+@media (max-width: 800px){
+    .link, .logo{ display: none;}
+    .banner{
+        display: none;
+    }
+
+    a.botao-mobile{
+        display: block;
+        color: black;
+        font-size: 14px;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        display: block;
+        text-decoration: none;
+        font-family: 'Montserrat';
+    }
+    #vector-pequeno{
+        width: 7px;
+        height: 10px;
+        left: 283px;
+        top: 49px;
+        margin-left: 4px;
+    }
+    #banner-mobile{
+        display: block;
+        width: 100%;
+        padding: 60px 0 0 0;
+    }
+    #logo-mobile{
+        display: block;
+        width: 17%;
+        position: absolute;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+    .chamada-01 h1{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 29px;
+        padding: 30px 20px 20px 50px;
+    }
+    .chamada-01 p{
+        padding: 0px 20px 20px 50px;
+    }
+    .chamada-02{
+
+        margin-top: 100px;
+        max-width: 100%px;
+
+        height: auto;
+        background: #F8F8F8;
+    }
+    .chamada-02 h2{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 29px;
+        padding: 30px 20px 20px 50px;
+    }
+    .chamada-02 p{
+        padding: 0px 20px 20px 50px;
+    }
+    .vector02{
+        height: 9px;
+        margin-left: 90px;
+    }
+    .img-sede{
+       width: 100%;
+    }
+    .p-chamada-02{
+        font-size: 20px;
+    }
+    .footer-descktop{display: none;}
+    .footer{
+        background-image: url(../src/img/radape_mobile.png);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .grupo{
+        padding-top: 50px;
+        padding-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .grupo > img{
+       padding-bottom: 60px;
+    }
+    .grupo > a{
+       padding-top: 60px;
+    }
+
+}
