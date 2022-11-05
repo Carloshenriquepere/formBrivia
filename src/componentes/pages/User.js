@@ -41,11 +41,13 @@ export default function User(){
                         </div>
                     </div>
                 </header>
-                <img id="logo-mobile" src={logoMobile} alt="logo-mobile"/>
-                   <Link className="botao_" to={`/user`}> 
-                        <strong>USUÁRIO</strong>
-                        <img id="vector-pequeno" src={vetorDesck}/>   
+                <div className="Mobile">
+                    <img id="logo-mobile" src={logoMobile} alt="logo-mobile"/>
+                    <Link className="botao_" to={`/`}>
+                        <strong>HOME</strong>
+                        <img id="vector-pequeno" src={vetorDesck}/>
                     </Link>
+                </div>
                 <img id="banner-mobile" src={bannerMobile} alt="banner-pequeno"/>
                 <h1 className="h1">LISTA DE USUARIO</h1>
                 {user.map(user=> ( 

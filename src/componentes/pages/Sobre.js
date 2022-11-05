@@ -10,18 +10,27 @@ import youtube from "../../img/img_youtube.png"
 import btn_rodape from "../../img/btn_rodape.png"
 import logoMobile from "../../img/logo_mobile.png"
 import bannerMobile from "../../img/banner_mobile.png"
-import sedeMobile from "../../img/sede_mobile.png"
 import * as yup from "yup"
 import {yupResolver} from "@hookform/resolvers/yup" 
 import {useForm} from "react-hook-form"
 
-const schema = yup.object().shape({
-    webSite: yup.string() .url('url inválida!') .required('O campo Site é OBRIGATORIO!'),
-    phone: yup.number() .required('O campo Telefone é OBRIGATORIO!') .positive() 
-     .integer(),
-    email: yup.string() .email('Email inválido!') .required('O campo Email é OBRIGATORIO!'),
-    name: yup.string().required('O campo Nome é OBRIGATORIO!')
-  }) .required();
+const schema = yup.object({
+    webSite:   
+        yup.string() 
+        .url('url inválida!') 
+        .required('O campo Site é OBRIGATORIO!'),
+    phone: 
+        yup.string() 
+        .required('O campo Telefone é OBRIGATORIO!') 
+        .min(9 ,'Telefone precisa ter 9 digitos'),
+    email: 
+        yup.string() 
+        .email('Email inválido!') 
+        .required('O campo Email é OBRIGATORIO!'),
+    name: 
+        yup.string()
+        .required('O campo Nome é OBRIGATORIO!')
+  });
 
 
 export default function Sobre(){
@@ -50,7 +59,7 @@ export default function Sobre(){
        
     })
    
-    const handleLogin = (e) => {
+    const handleLogin = (data) => {
         console.log({name, email, phone, webSite})
     }
    
@@ -72,11 +81,13 @@ export default function Sobre(){
                     </div>
                 </div>
             </header>
-            <img id="logo-mobile" src={logoMobile} alt="logo-mobile"/>
-                   <Link className="botao_" to={`/user`}> 
-                        <strong>USUÁRIO</strong>
-                        <img id="vector-pequeno" src={vetorDesck}/>   
+            <div className="Mobile">
+                    <img id="logo-mobile" src={logoMobile} alt="logo-mobile"/>
+                    <Link className="botao_" to={`/`}>
+                        <strong>HOME</strong>
+                        <img id="vector-pequeno" src={vetorDesck}/>
                     </Link>
+                </div>
                 <img id="banner-mobile" src={bannerMobile} alt="banner-pequeno"/>
             <h1 className="h1">EDITAR USUÁRIO</h1> 
             <div className="btn_editar">
@@ -88,12 +99,12 @@ export default function Sobre(){
                 <label className="form_label">Nome: </label>
                 <input 
                     type="text" 
-                    name="nome"
                     {...register('name')}
                     placeholder="Nome"
                     onChange={(e)=> setName(e.target.value)}
                     value={name}
                 />
+                <span className="p_erro">{errors?.name?.message}</span>
                 <br/>
                 <label className="form_label">Email: </label>
                 <input 
@@ -104,26 +115,27 @@ export default function Sobre(){
                     onChange={(e)=> setEmail(e.target.value)}
                     value={email}
                 />
+                <span className="p_erro">{errors?.email?.message}</span>
                 <br/>
                 <label className="form_label">Telefone: </label>
                 <input 
                     type="tel" 
-                    name="phone"
                     {...register('phone')}
                     placeholder="Telefone"
                     onChange={(e)=> setPhone(e.target.value)}
                     value={phone}
                 />
+                <span className="p_erro">{errors?.phone?.message}</span>
                 <br/>
                 <label className="form_label">Site: </label>
                 <input 
                     type="url" 
-                    name="webSite"
                     {...register('webSite')}
                     placeholder="Site"
                     onChange={(e)=> setWebSite(e.target.value)}
                     value={webSite}
                 />
+                <span className="p_erro">{errors?.webSite?.message}</span>
                 <br/>
                 <p className="form_label">*Todos os campos são obrigatórios</p>
                     <br/><br/>  
@@ -131,15 +143,12 @@ export default function Sobre(){
 
                 <div className="btn_cadastro">
                         <span className="p_erro">
-                            {errors.name?.message}
-                            {errors.email?.message}
-                            {errors.phone?.message}
-                            {errors.webSite?.message}
+                           
                         </span>
                 </div>
                 <div className="btn_cadastro">
                     <span>
-                            
+                       
                     </span>
                 </div>
             </form> 

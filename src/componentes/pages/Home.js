@@ -34,11 +34,13 @@ export default function Home(){
                         </div>
                     </div>
                 </header>
-                <img id="logo-mobile" src={logoMobile} alt="logo-mobile"/>
-                   <Link className="botao_" to={`/user`}> 
+                <div className="Mobile">
+                    <img id="logo-mobile" src={logoMobile} alt="logo-mobile"/>
+                    <Link className="botao_" to={`/user`}>
                         <strong>USUÁRIO</strong>
-                        <img id="vector-pequeno" src={vetorDesck}/>   
+                        <img id="vector-pequeno" src={vetorDesck}/>
                     </Link>
+                </div>
                 <img id="banner-mobile" src={bannerMobile} alt="banner-pequeno"/>
                 <div className="chamada-01">
                     <h1>
