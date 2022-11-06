@@ -13,6 +13,7 @@ import bannerMobile from "../../img/banner_mobile.png"
 import * as yup from "yup"
 import {yupResolver} from "@hookform/resolvers/yup" 
 import {useForm} from "react-hook-form"
+import { yupToFormErrors } from "formik";
 
 const schema = yup.object({
     webSite:   
@@ -56,16 +57,24 @@ export default function Sobre(){
 
     const {register ,handleSubmit, formState:{ errors } } = useForm({
        resolver: yupResolver(schema)
-       
     })
    
     const handleLogin = (data) => {
         console.log({name, email, phone, webSite})
     }
-   
-    
 
-    
+    const msg = 
+    errors?.name?.message == null && 
+    errors?.webSite?.message == null && 
+    errors?.email?.message == null && 
+    errors?.phone?.message == null ? "Atualizado com sucesso!" : ""
+
+    const [isShown, setIsShown] = useState(false);
+
+    const handleClick = () => {
+        setIsShown(msg == "" ? false : true);
+    };
+
     return(
         <main>
             <header className="containner">
@@ -129,7 +138,7 @@ export default function Sobre(){
                 <br/>
                 <label className="form_label">Site: </label>
                 <input 
-                    type="url" 
+                    type="text" 
                     {...register('webSite')}
                     placeholder="Site"
                     onChange={(e)=> setWebSite(e.target.value)}
@@ -139,17 +148,9 @@ export default function Sobre(){
                 <br/>
                 <p className="form_label">*Todos os campos são obrigatórios</p>
                     <br/><br/>  
-                <button className="form_btn" type="submit">Salvar Cadastro</button>
-
-                <div className="btn_cadastro">
-                        <span className="p_erro">
-                           
-                        </span>
-                </div>
-                <div className="btn_cadastro">
-                    <span>
-                       
-                    </span>
+                <button className="form_btn" type="submit" onClick={handleClick}>Salvar Cadastro</button>
+                <div className="btn_cadastro" style={{display: isShown ? 'block' : 'none'}}>
+                    <span>{msg}</span>
                 </div>
             </form> 
             <div className="footer">
@@ -198,5 +199,5 @@ export default function Sobre(){
             </div> 
         </main>
     )   
-    
+
 }

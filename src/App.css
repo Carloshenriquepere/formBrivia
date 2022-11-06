@@ -151,9 +151,10 @@ li{
     font-weight: 400;
     font-size: 14px;
     line-height: 100%;
+   
 }
 li > strong{
-    
+  
     
 }
 form{
@@ -163,7 +164,9 @@ form{
     margin: auto;
 }
 input{
-    padding-right: 610px;
+    display: flex;
+    width: 792px;
+   
     margin-bottom: 20px;
     font-family: 'Noticia Text';
     font-style: normal;
@@ -184,10 +187,14 @@ input{
 }
 
 button{
-    margin-bottom: 20px;
+    
     color: white;
     background-color: #17305A;;
-    margin-left: 300px;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    
     width: 256px;
     height: 44px;
     right: 288px;
@@ -198,7 +205,8 @@ button{
     max-width: 800px;
     margin: auto;
     display: flex;
-    background: #F0F2F5;
+    justify-content: center;
+   
     margin-bottom: 20px;
     font-family: 'Noticia Text';
     font-style: normal;
@@ -209,10 +217,13 @@ button{
 }.btn_cadastro > span {
     padding: 10px;
     color: green;
+    background: #F0F2F5;
 }
 .p_erro{
     color: red;
 }
+
+
 @media (max-width: 800px){
     .link, .logo{ display: none;}
     .banner{display: none;}
@@ -308,6 +319,7 @@ button{
        padding-top: 60px;
     }
     input{
+        display: flex;
         max-width: 300px;
     }
     ul{
@@ -315,5 +327,10 @@ button{
         flex-direction: column;
         
     }
-
+    .btn_cadastro{
+        max-width: 300px;
+        display: flex;
+        margin-top: 20px;
+    }
+   
 }

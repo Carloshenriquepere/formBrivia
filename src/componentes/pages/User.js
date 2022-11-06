@@ -62,6 +62,28 @@ export default function User(){
                         </ul>
                     </div>
                 ))}
+                <div className="footer">
+                    <div className="grupo">
+                        <img src={logo_rodape} alt="logo roda pe"/>
+                        <div>
+                            <a href="#" className="logolinkedin">
+                                <img src={instagran} alt="botao-linkedin"/>
+                            </a>
+                            <a href="#" className="logoinsta">
+                                <img src={linkedin} alt="botao-insta"/>
+                            </a>
+                            <a href="#" className="logoface">
+                                <img src={facebook} alt="botao-face"/>
+                            </a>
+                            <a href="#" className="logoyou">
+                                <img src={youtube} alt="botao-youtube"/>
+                            </a>
+                        </div>
+                        <a href="#">
+                            <img src={btn_rodape} alt="botao-link-rodape"/>
+                        </a>
+                    </div>
+                </div>
                 <div className="footer-descktop">
                         <div className="grupo-descktop">
                             <img src={logo_rodape} alt="logo roda pe"/>
